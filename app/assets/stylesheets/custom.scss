@@ -160,9 +160,14 @@ p {
 	width: 70%;
 }
 
-
 /************ MEDIA QUERIES **********/
-@media (max-width: $screen-sm-min) {
+
+// Small Screens
+@media (max-width: $screen-md-min) {
+	.navbar-brand {
+		font-size: 1.2em;
+		margin-top: 2px;
+	}
 	.row {
 		margin-top: 110px;
 		margin-bottom: 90px;
@@ -177,5 +182,13 @@ p {
 	}
 	.line-image-wide {
 		display: none;
+	}
+}
+
+// Extra Small Screens
+@media (max-width: $screen-sm-min) {
+	.navbar-brand {
+		font-size: 1.0em;
+		margin-top: 2px;
 	}
 }
