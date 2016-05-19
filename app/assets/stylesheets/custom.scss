@@ -24,6 +24,28 @@ body {
 	position: relative;
 }
 
+.contact {
+	width: 100%;
+	background-size: cover;
+	min-height: 500px;
+	position: relative;
+	// margin-top: -150px;
+	background-attachment: fixed;
+   background-position: top; 
+
+   input {
+   	margin-top: 15px;
+   }
+   textarea {
+   	margin-top: 15px;
+   }
+
+   iframe {
+   	width: 100%;
+   	height: 200px;
+   }
+}
+
 // Navigation
 .navbar {
 	text-transform: uppercase;
@@ -95,6 +117,11 @@ p {
 	margin-bottom: 100px;
 }
 
+#footer {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
 // Components
 .blue-circle {
 	width: 180px;
@@ -118,5 +145,5 @@ p {
 
 .service-img {
 	width: 100%;
-	margin: 0;
+	margin: 0 0 20px 0;
 }

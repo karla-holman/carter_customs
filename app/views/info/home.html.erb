@@ -49,18 +49,103 @@
 		<div class="row centered">
 			<div class="col-md-4">
 				<%= image_tag "services/ink.png", class: "service-img" %>
-				<h4>Years of Experience in Custom Work</h4>
-				<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+				<h4>Custom Paint</h4>
+				<p>We do completely custom artwork and paint jobs. If you can dream it, we can make it a reality.</p>
 			</div>
 			<div class="col-md-4">
 				<%= image_tag "services/welding.png", class: "service-img" %>
-				<h4>Years of Experience in Custom Work</h4>
-				<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+				<h4>Mechanical Work</h4>
+				<p>We do completely custom artwork and paint jobs. If you can dream it, we can make it a reality.</p>
 			</div>
 			<div class="col-md-4">
 				<%= image_tag "services/stuff.png", class: "service-img" %>
-				<h4>Years of Experience in Custom Work</h4>
-				<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+				<h4>Vintage Supplies</h4>
+				<p>We do completely custom artwork and paint jobs. If you can dream it, we can make it a reality.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Contact -->
+<div class="contact" style="background-image: url(<%= asset_path('backgrounds/shop.jpg') %>)">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<h4>Contact Form</h4>
+				<%= form_tag class: "form-group" do %>
+					<div class="col-md-6">
+				  		<%= text_field_tag(:name, "First Name", class: "form-control") %>
+				  	</div>
+				  	<div class="col-md-6">
+				  		<%= text_field_tag(:name, "Last Name", class: "form-control") %>
+				  	</div>
+				  	<div class="col-md-6">
+				  		<%= text_field_tag(:email, "Email Address", class: "form-control") %>
+				  	</div>
+				  	<div class="col-md-6">
+				  		<%= text_field_tag(:email, "Phone Number", class: "form-control") %>
+				  	</div>
+				  	<div class="col-md-12">
+				  		<%= text_field_tag(:subject, "Subject", class: "form-control") %>
+				  	</div>
+			  		<div class="col-md-12">
+				  		<%= text_area_tag(:message, "Your Message", size: "24x6", class: "form-control") %>
+				  	</div>
+				<% end %>
+			</div>
+			<div class="col-md-4">
+				<h4>Contact Us</h4>
+				<p>There’s always something happening at the shop. Get in touch or just stop by.</p>
+				<div class="col-md-6">
+					<p>
+						Shop Hours<br>
+						Monday - Friday<br>
+						8:00 am - 5:00 pm
+					</p>
+				</div>
+				<div class="col-md-6">
+					<p>
+						Address<br>
+						Monday - Friday<br>
+						8:00 am - 5:00 pm
+					</p>
+				</div>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26484.663782455056!2d-117.96536960653269!3d33.92613116096978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2d5313a8b3d83%3A0xa81f48a1853026dd!2sLa+Habra%2C+CA+90631!5e0!3m2!1sen!2sus!4v1463637390292" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Store -->
+<div class="dark-blue">
+	<div class="blue-circle">
+		<h5>Store</h5>
+		<%= image_tag "line_art/wheel.png" %>
+	</div>
+	<div class="container">
+		<div class="row centered">
+			<div class="col-md-4">
+				<%= image_tag "services/ink.png", class: "service-img" %>
+				<h4>Custom Paint</h4>
+				<p>We do completely custom artwork and paint jobs. If you can dream it, we can make it a reality.</p>
+			</div>
+			<div class="col-md-4">
+				<%= image_tag "services/welding.png", class: "service-img" %>
+				<h4>Mechanical Work</h4>
+				<p>We do completely custom artwork and paint jobs. If you can dream it, we can make it a reality.</p>
+			</div>
+			<div class="col-md-4">
+				<%= image_tag "services/stuff.png", class: "service-img" %>
+				<h4>Vintage Supplies</h4>
+				<p>We do completely custom artwork and paint jobs. If you can dream it, we can make it a reality.</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="row" id="footer">
+			<div class="col-md-6">
+				Copyright 2016 Carter Customs
 			</div>
 		</div>
 	</div>
