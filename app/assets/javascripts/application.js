@@ -16,4 +16,15 @@
 //= require turbolinks
 //= require_tree .
 
-
+$(window).scroll(function(){
+	console.log("Scroll from " + $(window).scrollTop());
+	if($(window).scrollTop() > 50) {
+		$('.navbar').css('margin-top', "0px");
+		$('.navbar').addClass('navbar-inverse');
+		$('.navbar').removeClass('navbar-default');
+	} else {
+		$('.navbar').removeClass('navbar-inverse');
+		$('.navbar').addClass('navbar-default');
+		$('.navbar').css('margin-top', "50px");
+	}
+})
