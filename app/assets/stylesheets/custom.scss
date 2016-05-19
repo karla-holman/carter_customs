@@ -78,9 +78,12 @@ p {
 }
 
 // Bootstrap Modifications
-
+.btn-default {
+	transition: background-color 1s;
+}
 .btn-default:hover {
 	background-color: rgba(52, 159, 235, 0.7);
+	transition: 1s;
 }
 
 .row {

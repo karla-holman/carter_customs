@@ -16,8 +16,10 @@
 //= require turbolinks
 //= require_tree .
 
+var rotation = 0, 
+    scrollLoc = $(window).scrollTop();
+
 $(window).scroll(function(){
-	console.log("Scroll from " + $(window).scrollTop());
 	if($(window).scrollTop() > 50) {
 		$('.navbar').css('margin-top', "0px");
 		$('.navbar').addClass('navbar-inverse');
@@ -27,4 +29,16 @@ $(window).scroll(function(){
 		$('.navbar').addClass('navbar-default');
 		$('.navbar').css('margin-top', "50px");
 	}
-})
+
+	// handle wheel scroll
+	var newLoc = $(document).scrollTop();
+	var diff = scrollLoc - newLoc;
+	rotation += diff, scrollLoc = newLoc;
+	var rotationStr = "rotate(" + rotation + "deg)";
+	$(".blue-circle img").css({
+		"-webkit-transform": rotationStr,
+		"-moz-transform": rotationStr,
+		"transform": rotationStr
+	});
+
+});
