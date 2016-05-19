@@ -35,6 +35,9 @@ body {
 
    input {
    	margin-top: 15px;
+   	width: 49%;
+   	float: left;
+   	margin-right: 1%;
    }
    textarea {
    	margin-top: 15px;
@@ -174,11 +177,6 @@ p {
 	}
 	div[class^="col-"] {
 		margin-bottom: 50px;
-	}
-	.contact {
-		div[class^="col-"] {
-			margin-bottom: 10px;
-		}
 	}
 	.line-image-wide {
 		display: none;
