@@ -77,6 +77,10 @@ p {
 	line-height: 1.75em;
 }
 
+.centered {
+	text-align: center;
+}
+
 // Bootstrap Modifications
 .btn-default {
 	transition: background-color 1s;
@@ -87,7 +91,7 @@ p {
 }
 
 .row {
-	margin-top: 90px;
+	margin-top: 110px;
 	margin-bottom: 100px;
 }
 
@@ -104,10 +108,15 @@ p {
 	margin-right: auto;
 	background-color: #0d283b;
 	z-index: 100;
-	padding: 10px;
+	padding: 20px;
 
 	img {
 		opacity: 0.1;
 		width: 100%;
 	}
+}
+
+.service-img {
+	width: 100%;
+	margin: 0;
 }
