@@ -147,3 +147,35 @@ p {
 	width: 100%;
 	margin: 0 0 20px 0;
 }
+
+.shop-img {
+	width: 100%;
+	margin: 0 0 20px 0;
+	background-color: rgba(253, 253, 253, 0.7);
+}
+
+.line-image-wide {
+	margin-left: 30%;
+	margin-top: 10px;
+	width: 70%;
+}
+
+
+/************ MEDIA QUERIES **********/
+@media (max-width: $screen-sm-min) {
+	.row {
+		margin-top: 110px;
+		margin-bottom: 90px;
+	}
+	div[class^="col-"] {
+		margin-bottom: 50px;
+	}
+	.contact {
+		div[class^="col-"] {
+			margin-bottom: 10px;
+		}
+	}
+	.line-image-wide {
+		display: none;
+	}
+}
