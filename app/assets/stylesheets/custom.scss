@@ -40,7 +40,7 @@ body {
    	margin-right: 1%;
    }
 
-   input:nth-child(2n+1) {
+   input:nth-child(2n) {
    	float: right;
    	margin-right: 0;
    }
@@ -53,6 +53,19 @@ body {
    	width: 100%;
    	height: 200px;
    }
+
+   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  		color: $gray;
+	}
+	::-moz-placeholder { /* Firefox 19+ */
+	  color: $gray;
+	}
+	:-ms-input-placeholder { /* IE 10+ */
+	  color: $gray;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+	  color: $gray;
+	}
 }
 
 .instagram {
