@@ -4,13 +4,24 @@ body {
 	color: #fff;
 }
 
-// Sections
+/********** DIV SECTIONS *************/
 
 .hero {
 	width: 100%;
 	background-size: cover;
 	height: 100vh;
 	min-height: 500px;
+	position: relative;
+	// margin-top: -150px;
+	background-attachment: fixed;
+   background-position: top left;
+   text-align: center; 
+   padding-top: 10%;
+}
+.page-header {
+	width: 100%;
+	background-size: cover;
+	height: 200px;
 	position: relative;
 	// margin-top: -150px;
 	background-attachment: fixed;
@@ -94,7 +105,23 @@ body {
 		width: 100%;
 	}
 }
-// Navigation
+
+#footer {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.footer {
+	background-color: #0d283b;
+}
+
+.social {
+	float: right;
+	margin-left: 20px;
+}
+
+/********** NAVIGATION *************/
+
 .navbar {
 	text-transform: uppercase;
 	margin-top: 50px;
@@ -107,7 +134,12 @@ body {
 	color: #fff;
 }
 
-// Typography
+.navbar-collapse.collapse.in {
+	background-color: #0d283b;
+}
+
+/********** TYPOGRAPHY *************/
+
 .hero {
 	h3 {
 		color: $brand-primary;
@@ -151,7 +183,8 @@ p {
 	text-align: center;
 }
 
-// Bootstrap Modifications
+/********** BOOTSTRAP COMPONENTS *************/
+
 .btn-default {
 	transition: background-color 1s;
 }
@@ -161,22 +194,13 @@ p {
 }
 
 .row {
-	margin-top: 110px;
+	margin-top: 90px;
 	margin-bottom: 100px;
 }
 
-#footer {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.footer {
-	background-color: #0d283b;
-}
-
-.social {
-	float: right;
-	margin-left: 20px;
+.dark-blue .row {
+	margin-top: 110px;
+	margin-bottom: 40px;
 }
 
 .carousel {
@@ -185,7 +209,8 @@ p {
 	}
 }
 
-// Components
+/********** PAGE COMPONENTS *************/
+
 .blue-circle {
 	width: 180px;
 	height: 180px;
@@ -232,11 +257,20 @@ p {
 		margin-top: 2px;
 	}
 	.row {
-		margin-top: 110px;
+		margin-top: 50px;
 		margin-bottom: 20px;
+	}
+	.dark-blue .row {
+		margin-top: 110px;
+		margin-bottom: 40px;
 	}
 	div[class^="col-"] {
 		margin-bottom: 50px;
+	}
+	.footer {
+		div[class^="col-"] {
+			margin-bottom: 20px;
+		}
 	}
 	.line-image-wide {
 		display: none;
@@ -251,13 +285,6 @@ p {
 			width: 50%;
 		}
 	}
-	.footer {
-		text-align: center;
-	}
-	.social-icons {
-		margin-left: auto;
-		margin-right: auto;
-	}
 }
 
 // Extra Small Screens
@@ -266,6 +293,31 @@ p {
 		font-size: 1.0em;
 		margin-top: 2px;
 	}
+	.instagram {
+		.post {
+			width: 50%;
+		}
+	}
+	.footer {
+		text-align: center;
+		div[class^="col-"] {
+			margin-bottom: 20px;
+		}
+	}
+	.social-icons {
+		margin-left: auto;
+		margin-right: auto;
+		// width: 250px;
+	}
+	.social {
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+	}
+}
+
+// Extra Extra Small Screens
+@media (max-width: $screen-xs-min) {
 	.instagram {
 		.post {
 			width: 100%;
