@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.2'
+gem 'rails', '~> 4.2.6'
 
 # Bootstrap Sass
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -31,6 +31,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Simpleform
 gem 'simple_form'
 gem 'mail_form'
+
+# Spree
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
