@@ -33,7 +33,9 @@ gem 'simple_form'
 gem 'mail_form'
 
 # Spree
-
+gem 'spree', github: 'spree/spree'
+gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
+gem 'spree_gateway', github: 'spree/spree_gateway'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -190,35 +190,21 @@
 				<p>Grab a ball cap or a shot glass, something to remember your time with us.</p>
 				<%= image_tag "line_art/lines.png", class: "line-image-wide" %>
 			</div>
-			<div class="col-xs-6 col-sm-4 col-md-2">
-				<%= image_tag "shop/glass.png", class: "shop-img" %>
-				<p>
-					Shot Glass<br>
-					$18.95
-				</p>
-			</div>
-			<div class="col-xs-6 col-sm-4 col-md-2">
-				<%= image_tag "shop/glass.png", class: "shop-img" %>
-				<p>
-					Shot Glass<br>
-					$18.95
-				</p>
-			</div>
-			<div class="col-xs-6 col-sm-4 col-md-2">
-				<%= image_tag "shop/glass.png", class: "shop-img" %>
-				<p>
-					Shot Glass<br>
-					$18.95
-				</p>
-			</div>
-			<div class="col-xs-6 col-sm-4 col-md-2">
-				<%= image_tag "shop/glass.png", class: "shop-img" %>
-				<p>
-					Shot Glass<br>
-					$18.95
-				</p>
-			</div>
-
+			<% if @products.empty? %>
+				<div class="col-md-8">
+					<p>No Products available for sale</p>
+				</div>
+			<% else %>
+				<%= @products.each do |product| %>
+					<div class="col-xs-6 col-sm-4 col-md-2">
+						<%= image_tag "shop/glass.png", class: "shop-img" %>
+						<p>
+							Shot Glass<br>
+							$18.95
+						</p>
+					</div>
+				<% end %>
+			<% end %>
 		</div>
 	</div>
 </div>

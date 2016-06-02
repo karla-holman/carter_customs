@@ -2,6 +2,7 @@ class InfoController < ApplicationController
 	def home
 		# For web contact
 		@contact = Contact.new
+		@products = Spree::Product.all
 	end
 
 	# POST Contact
