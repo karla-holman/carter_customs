@@ -37,6 +37,9 @@ gem 'spree', github: 'spree/spree'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
 gem 'spree_gateway', github: 'spree/spree_gateway'
 
+# Amazon Web Services
+gem 'aws-sdk'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
