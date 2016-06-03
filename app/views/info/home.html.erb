@@ -197,8 +197,14 @@
 			<% else %>
 				<% @products.each do |product| %>
 					<div class="col-xs-6 col-sm-4 col-md-2">
-						<%= image_tag product.images.first.attachment.url(:product), class: "shop-img" %>
-						<p style="font-weight: 700; line-height: 1.2em"><%= product.name %></p>
+						<%= link_to spree.product_path(product) do %>
+							<% if !product.images.empty? %>
+								<%= image_tag product.images.first.attachment.url(:product), class: "shop-img" %>
+							<% else %>
+								<%= image_tag "no-image.jpg", class: "shop-img" %>
+							<% end %>
+						<% end %>
+						<p style="font-weight: 700; line-height: 1.2em"><%= link_to spree.product_path(product) do %><%= product.name %><% end %></p>
 						<p><%= product.price %></p>
 					</div>
 				<% end %>
