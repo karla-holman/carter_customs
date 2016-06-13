@@ -33,7 +33,7 @@
 				<tbody>
 					<% @projects.each do |project| %>
 						<tr>
-							<td><%= project.images.first ? project.images.first.image_attach.url(:thumb) : "N/A" %></td>
+							<td><%= project.images.first ? (image_tag project.images.first.image_attach.url(:thumb), alt: "thumb") : "N/A" %></td>
 							<td><%= project.name %></td>
 							<td><%= project.description %></td>
 						</tr>
