@@ -1,0 +1,15 @@
+<%= form_for [:admin, @project] do |f| %>
+	<div class="col-md-12">
+		<div class="form-group">
+			<%= f.text_field :name, placeholder: "Name", class: "form-control" %>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="form-group">
+			<%= f.text_area :description, placeholder: "Description", class: "form-control" %>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<%= f.submit class: "btn btn-primary" %>
+	</div>
+<% end %>

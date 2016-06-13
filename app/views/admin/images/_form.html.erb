@@ -1,0 +1,19 @@
+<%= form_for [:admin, @project, @image], :html => { :multipart => true } do |f| %>
+	<div class="col-md-6">
+		<div class="form-group">
+			<%= f.label :image_attach, "Select Image" %>
+			<%= f.file_field :image_attach %>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="form-group">
+			<%= f.text_field :name, placeholder: "Image Name", class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= f.text_field :description, placeholder: "Image Description", class: "form-control" %>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<%= f.submit class: "btn btn-primary" %>
+	</div>
+<% end %>

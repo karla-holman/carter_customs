@@ -18,16 +18,15 @@ body {
    text-align: center; 
    padding-top: 10%;
 }
-.page-header {
+.page-hero {
 	width: 100%;
 	background-size: cover;
-	height: 200px;
+	min-height: 200px;
 	position: relative;
 	// margin-top: -150px;
 	background-attachment: fixed;
-   background-position: top left;
-   text-align: center; 
-   padding-top: 10%;
+   background-position: bottom left;
+   text-align: center;
 }
 
 .dark-blue {

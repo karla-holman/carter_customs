@@ -1,0 +1,45 @@
+<!-- Header hero image -->
+<div class="page-hero" style="background-image: url(<%= asset_path('welding.jpg') %>);" >
+	<div class="container">
+		<div class="row">
+
+		</div>
+	</div>
+</div>
+
+<div class="dark-blue">
+	<div class="blue-circle">
+		<h5>Projects</h5>
+		<%= image_tag "line_art/wheel.png" %>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<h1>Projects</h1>
+			</div> 
+			<div class="col-md-4">
+				<%= link_to "New Project", new_admin_project_path, class: "btn btn-default", style: "margin-top: 25px" %>
+			</div>
+		</div>
+		<div class="row">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Image</th>
+						<th>Name</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @projects.each do |project| %>
+						<tr>
+							<td><%= project.images.first ? project.images.first.image_attach.url(:thumb) : "N/A" %></td>
+							<td><%= project.name %></td>
+							<td><%= project.description %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

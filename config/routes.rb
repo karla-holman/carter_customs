@@ -14,6 +14,13 @@ Rails.application.routes.draw do
 
   get 'home' => 'info#home'
   post 'contact' => 'info#contact'
+
+  namespace :admin do
+    resources :projects do
+      resources :images
+    end
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602051752) do
+ActiveRecord::Schema.define(version: 20160612233721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,20 @@ ActiveRecord::Schema.define(version: 20160602051752) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "project_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "image_attach_file_name"
+    t.string   "image_attach_content_type"
+    t.integer  "image_attach_file_size"
+    t.datetime "image_attach_updated_at"
+  end
+
+  add_index "images", ["project_id"], name: "index_images_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
@@ -1111,5 +1125,31 @@ ActiveRecord::Schema.define(version: 20160602051752) do
 
   add_index "spree_zones", ["default_tax"], name: "index_spree_zones_on_default_tax", using: :btree
   add_index "spree_zones", ["kind"], name: "index_spree_zones_on_kind", using: :btree
+
+  create_table "todo_items", force: :cascade do |t|
+    t.integer  "todo_list_id"
+    t.string   "content",      limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "completed_at"
+  end
+
+  add_index "todo_items", ["todo_list_id"], name: "index_todo_items_on_todo_list_id", using: :btree
+
+  create_table "todo_lists", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name",      limit: 255
+    t.string   "last_name",       limit: 255
+    t.string   "email",           limit: 255
+    t.string   "password_digest", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
