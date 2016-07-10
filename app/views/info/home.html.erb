@@ -183,13 +183,13 @@
 <a name="store"></a> 
 <div class="dark-blue">
 	<div class="blue-circle">
-		<h5>Store</h5>
+		<h5>Projects</h5>
 		<%= image_tag "line_art/wheel.png" %>
 	</div>
 	<div class="container">
 		<div class="row centered">
 			<div class="col-md-4">
-				<h4>Carter Custom Swag</h4>
+				<h4>Current Projects</h4>
 				<p>Grab a ball cap or a shot glass, something to remember your time with us.</p>
 				<%= image_tag "line_art/lines.png", class: "line-image-wide" %>
 			</div>
@@ -250,10 +250,47 @@
 				</p>
 				<p>
 					Address<br>
-					12345 California Ave, La Habra, CA
+					871 East Lambert Road Unit C<br>La Habra, CA 90631
 				</p>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26484.663782455056!2d-117.96536960653269!3d33.92613116096978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2d5313a8b3d83%3A0xa81f48a1853026dd!2sLa+Habra%2C+CA+90631!5e0!3m2!1sen!2sus!4v1463637390292" frameborder="0" style="border:0" allowfullscreen></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5665.105023925774!2d-117.93979264979771!3d33.92509808870084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2aa4ca146afd%3A0xb1f4c62064b74619!2sc%2C+871+E+Lambert+Rd%2C+La+Habra%2C+CA+90631!5e0!3m2!1sen!2sus!4v1468125888733" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Store -->
+<a name="store"></a> 
+<div class="dark-blue">
+	<div class="blue-circle">
+		<h5>Store</h5>
+		<%= image_tag "line_art/wheel.png" %>
+	</div>
+	<div class="container">
+		<div class="row centered">
+			<div class="col-md-4">
+				<h4>Carter Custom Swag</h4>
+				<p>Grab a ball cap or a shot glass, something to remember your time with us.</p>
+				<%= image_tag "line_art/lines.png", class: "line-image-wide" %>
+			</div>
+			<% if @products.empty? %>
+				<div class="col-md-8">
+					<p>No Products available for sale</p>
+				</div>
+			<% else %>
+				<% @products.each do |product| %>
+					<div class="col-xs-6 col-sm-4 col-md-2">
+						<%= link_to spree.product_path(product) do %>
+							<% if !product.images.empty? %>
+								<%= image_tag product.images.first.attachment.url(:product), class: "shop-img" %>
+							<% else %>
+								<%= image_tag "no-image.jpg", class: "shop-img" %>
+							<% end %>
+						<% end %>
+						<p style="font-weight: 700; line-height: 1.2em"><%= link_to spree.product_path(product) do %><%= product.name %><% end %></p>
+						<p><%= number_to_currency(product.price) %></p>
+					</div>
+				<% end %>
+			<% end %>
 		</div>
 	</div>
 </div>
