@@ -28,14 +28,16 @@
 						<th>Image</th>
 						<th>Name</th>
 						<th>Description</th>
+						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
 					<% @projects.each do |project| %>
 						<tr>
 							<td><%= project.images.first ? (image_tag project.images.first.image_attach.url(:thumb), alt: "thumb") : "N/A" %></td>
-							<td><%= project.name %></td>
+							<td><%= link_to project.name, admin_project_path(project) %></td>
 							<td><%= project.description %></td>
+							<td><%= link_to 'Edit', edit_admin_project_path(project), class: 'btn btn-default' %>
 						</tr>
 					<% end %>
 				</tbody>
