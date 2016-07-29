@@ -15,9 +15,14 @@ Rails.application.routes.draw do
   get 'home' => 'info#home'
   post 'contact' => 'info#contact'
 
+  resources :projects, only: [:index, :show]
+
   namespace :admin do
     resources :projects do
       resources :images
+      member do
+        put :complete
+      end 
     end
   end
 

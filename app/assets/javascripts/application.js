@@ -35,7 +35,7 @@ $(window).scroll(function(){
 	var diff = scrollLoc - newLoc;
 	rotation += diff, scrollLoc = newLoc;
 	var rotationStr = "rotate(" + -rotation + "deg)";
-	$(".blue-circle img").css({
+	$(".wheel img").css({
 		"-webkit-transform": rotationStr,
 		"-moz-transform": rotationStr,
 		"transform": rotationStr

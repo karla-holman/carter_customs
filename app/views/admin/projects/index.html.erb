@@ -27,6 +27,7 @@
 					<tr>
 						<th>Image</th>
 						<th>Name</th>
+						<th>Completed?</th>
 						<th>Description</th>
 						<th>Actions</th>
 					</tr>
@@ -36,8 +37,12 @@
 						<tr>
 							<td><%= project.images.first ? (image_tag project.images.first.image_attach.url(:thumb), alt: "thumb") : "N/A" %></td>
 							<td><%= link_to project.name, admin_project_path(project) %></td>
+							<td><%= project.complete_date.present? ? project.complete_date.strftime("%m/%d/%Y") : "In Progress" %></td>
 							<td><%= project.description %></td>
-							<td><%= link_to 'Edit', edit_admin_project_path(project), class: 'btn btn-default' %>
+							<td>
+								<%= link_to 'Edit', edit_admin_project_path(project), class: 'btn btn-default' %>
+								<%= link_to 'Complete', complete_admin_project_path(project), method: :put, class: 'btn btn-default' %>
+							</td>
 						</tr>
 					<% end %>
 				</tbody>

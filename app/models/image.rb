@@ -2,7 +2,7 @@ class Image < ActiveRecord::Base
 	belongs_to :project
 
 	has_attached_file :image_attach, styles: { 
-		large: "600x600",
+		large: "2000x1600",
 		medium: "300x300>", 
 		thumb: "100x100>" 
 	}, 

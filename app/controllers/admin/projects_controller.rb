@@ -1,11 +1,11 @@
 module Admin
 	class ProjectsController < AdminController
+		before_filter :find_project, only: [:show, :edit, :update, :complete]
 		def index
-			@projects = Project.all
+			@projects = Project.all.order('complete_date DESC')
 		end
 
 		def show
-			@project = Project.find(params[:id])
 		end
 
 		def new
@@ -26,11 +26,9 @@ module Admin
 		end
 
 		def edit
-			@project = Project.find(params[:id])
 		end
 
 		def update
-			@project = Project.find(params[:id])
 			respond_to do |format|
 				if @project.update(project_params)
 					format.html { redirect_to admin_project_path(@project) }
@@ -41,10 +39,19 @@ module Admin
 			end
 		end
 
+		def complete
+			@project.update complete_date: Date.current
+			redirect_to admin_projects_path
+		end
+
 		private
 
 		def project_params
 			params.require(:project).permit(:name, :description, :complete_date)
+		end
+
+		def find_project
+			@project = Project.find(params[:id])
 		end
 	end
 end

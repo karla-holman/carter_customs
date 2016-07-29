@@ -1,16 +1,36 @@
-<div class="page-header" style="background-image: url(<%= asset_path('welding.jpg') %>);" >
+<!-- Header hero image -->
+<div class="project-hero" style="background-image: url(<%= asset_path('welding.jpg') %>);" >
 	<div class="container">
 		<div class="row">
-			<h1>Projects</h1>
+			<div class="project-circle wheel">
+				<h4 class="project-header">Carter Customs Projects</h4>
+				<%= image_tag "line_art/wheel.png" %>
+			</div>
 		</div>
 	</div>
 </div>
 
-<div class="container">
-	<%= @projects.each do |project| %>
+<div class="dark-blue">
+	<div class="blue-circle wheel">
+		<h5>Current</h5>
+		<%= image_tag "line_art/wheel.png" %>
+	</div>
+	<div class="container">
 		<div class="row">
-			<h1><%= project.name %></h1>
-			<p><%= project.description %></p>
+			<div style="text-align: center; margin-left: auto; margin-right: auto; width: 60%">
+				<h4>What's Happening at the Shop</h4>
+				<p>We have so many projects going on, it is hard to keep track. If you want a glimps of what's happening, check out some of the projects below. Click an image to learn more.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Instagram Feed -->
+<a name="gallery"></a>
+<div class="instagram">
+	<% @projects.each do |project| %>
+		<div class="post" style="background-image: url(<%= asset_path(project.main_image.url(:medium)) %>)">
+			<%= image_tag project.main_image.url(:medium) if !project.main_image.url(:medium).include?("missing") %>
 		</div>
 	<% end %>
 </div>
