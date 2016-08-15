@@ -32,12 +32,11 @@ body {
 .project-hero {
 	width: 100%;
 	background-size: cover;
-	height: 100vh;
-	min-height: 500px;
+	min-height: 200px;
 	position: relative;
 	// margin-top: -150px;
 	background-attachment: fixed;
-   background-position: top left;
+   background-position: bottom;
    text-align: center; 
    padding-top: 10%;
    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
@@ -188,6 +187,10 @@ h5 {
 	right: 0;
 }
 
+h5.double {
+	top: 70px;
+}
+
 // Wheel type
 .project-header {
 	color: $brand-primary;
@@ -307,6 +310,10 @@ p {
 
 // Small Screens
 @media (max-width: $screen-md-min) {
+	ul.nav li a {
+		font-size: 0.8em;
+	}
+
 	.navbar-brand {
 		font-size: 0.8em;
 		margin-top: -1px;
@@ -351,6 +358,10 @@ p {
 
 // Extra Small Screens
 @media (max-width: $screen-sm-min) {
+	ul.nav li a {
+		font-size: 1em;
+	}
+
 	.navbar-brand {
 		font-size: 1.0em;
 		margin-top: 2px;

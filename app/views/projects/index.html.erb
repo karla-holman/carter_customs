@@ -1,18 +1,10 @@
 <!-- Header hero image -->
-<div class="project-hero" style="background-image: url(<%= asset_path('welding.jpg') %>);" >
-	<div class="container">
-		<div class="row">
-			<div class="project-circle wheel">
-				<h4 class="project-header">Carter Customs Projects</h4>
-				<%= image_tag "line_art/wheel.png" %>
-			</div>
-		</div>
-	</div>
+<div class="project-hero" style="background-image: url(<%= asset_path('backgrounds/projects.jpg') %>);" >
 </div>
 
 <div class="dark-blue">
 	<div class="blue-circle wheel">
-		<h5>Current</h5>
+		<h5 class="double">Current<br>Projects</h5>
 		<%= image_tag "line_art/wheel.png" %>
 	</div>
 	<div class="container">
@@ -28,9 +20,42 @@
 <!-- Instagram Feed -->
 <a name="gallery"></a>
 <div class="instagram">
-	<% @projects.each do |project| %>
-		<div class="post" style="background-image: url(<%= asset_path(project.main_image.url(:medium)) %>)">
-			<%= image_tag project.main_image.url(:medium) if !project.main_image.url(:medium).include?("missing") %>
+	<% if @projects.current.count == 0 %>
+		<h4>No Current Projects. Check back soon!</h4>
+	<% else %>
+		<% @projects.current.each do |project| %>
+			<div class="post" style="background-image: url(<%= asset_path(project.main_image.url(:medium)) %>)">
+				<%= image_tag project.main_image.url(:medium) if !project.main_image.url(:medium).include?("missing") %>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+
+<div class="dark-blue">
+	<div class="blue-circle wheel">
+		<h5 class="double">Past<br>Projects</h5>
+		<%= image_tag "line_art/wheel.png" %>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div style="text-align: center; margin-left: auto; margin-right: auto; width: 60%">
+				<h4>What We've Worked On</h4>
+				<p>We've got some great experience from a diverse set of past projects. Check out some of the images below to get an example of our work or find inspiration for your next project.</p>
+			</div>
 		</div>
+	</div>
+</div>
+
+<!-- Instagram Feed -->
+<a name="gallery"></a>
+<div class="instagram">
+	<% if @projects.past.count == 0 %>
+		<h4>No Current Projects. Check back soon!</h4>
+	<% else %>
+		<% @projects.past.each do |project| %>
+			<div class="post" style="background-image: url(<%= asset_path(project.main_image.url(:medium)) %>)">
+				<%= image_tag project.main_image.url(:medium) if !project.main_image.url(:medium).include?("missing") %>
+			</div>
+		<% end %>
 	<% end %>
 </div>

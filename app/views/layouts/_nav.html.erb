@@ -22,6 +22,9 @@
         <li><a href="/#store">Store</a></li>
         <li><%= link_to "Projects", projects_path %></li>
         <li><a href="/#contact">Contact</a></li>
+        <% if spree_current_user %>
+          <li><%= link_to spree.logout_path do %>Logout<% end %></li>
+        <% end %>
       </ul>
      </div>
   	</div>

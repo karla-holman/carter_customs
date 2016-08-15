@@ -3,7 +3,8 @@ class Project < ActiveRecord::Base
 
 	validates :name, presence: true, uniqueness: true
 
-	scope :current, ->{ where(completed_date > Date.today) }
+	scope :current, ->{ where("complete_date IS ?", nil) || where("complete_date > ?", Date.today) }
+	scope :past, ->{ where("complete_date <= ?", Date.today) }
 
 	has_attached_file :main_image, styles: { 
 		large: "2000x1600",
