@@ -29,7 +29,7 @@
 		</div>
 	<% else %>
 		<% @projects.current.each do |project| %>
-			<div class="post" style="background-image: url(<%= asset_path(project.main_image.url(:medium)) %>)">
+			<div class="col-md-4" style="background-image: url(<%= asset_path(project.main_image.url(:medium)) %>)">
 				<%= image_tag project.main_image.url(:medium) if !project.main_image.url(:medium).include?("missing") %>
 			</div>
 		<% end %>
@@ -63,7 +63,7 @@
 		</div>
 	<% else %>
 		<% @projects.past.each do |project| %>
-			<div class="post" style="background-image: url(<%= asset_path(project.main_image.url(:medium)) %>)">
+			<div class="col-md-4" style="background-image: url(<%= asset_path(project.main_image.url(:medium)) %>)">
 				<%= image_tag project.main_image.url(:medium) if !project.main_image.url(:medium).include?("missing") %>
 			</div>
 		<% end %>
