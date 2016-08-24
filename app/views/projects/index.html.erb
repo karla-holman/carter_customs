@@ -31,7 +31,7 @@
 		<div class="container">
 			<div class="row">
 				<% @projects.current.each do |project| %>
-					<div class="col-md-4" style="background-image: url(<%= asset_path(project.main_image.url(:medium)) %>)">
+					<div class="col-md-4" style="background-image: url(<%= asset_path(project.main_image.url(:large)) %>); background-size: cover">
 						<%= link_to project do %>
 							<%= image_tag project.main_image.url(:medium) if !project.main_image.url(:medium).include?("missing") %>
 						<% end %>
@@ -71,7 +71,7 @@
 		<div class="container">
 			<div class="row">
 				<% @projects.past.each do |project| %>
-					<div class="col-md-4" style="background-image: url(<%= asset_path(project.main_image.url(:medium)) %>)">
+					<div class="col-md-4" style="background-image: url(<%= asset_path(project.main_image.url(:large)) %>); background-size: cover">
 						<%= link_to project do %>
 							<%= image_tag project.main_image.url(:medium) if !project.main_image.url(:medium).include?("missing") %>
 						<% end %>
