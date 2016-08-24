@@ -1,7 +1,7 @@
 module Admin
 	class ProjectsController < AdminController
 		before_filter :find_project, only: [:show, :edit, :update, :complete, :destroy]
-		
+
 		def index
 			@projects = Project.all.order('complete_date DESC')
 		end
@@ -53,7 +53,7 @@ module Admin
 		private
 
 		def project_params
-			params.require(:project).permit(:name, :description, :complete_date)
+			params.require(:project).permit(:name, :description, :complete_date, :main_image, :main_image_file_name, :main_image_content_type, :main_image_file_size, :main_image_updated_at))
 		end
 
 		def find_project
