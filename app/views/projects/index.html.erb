@@ -21,7 +21,12 @@
 <a name="gallery"></a>
 <div class="instagram">
 	<% if @projects.current.count == 0 %>
-		<h4>No Current Projects. Check back soon!</h4>
+		<div class="container" style="background-image: url(<%= asset_path('backgrounds/projects.jpg') %>); min-height: 300px">
+			<div class="row centered">
+				<h2>No Current Projects</h2>
+				<h4>Check back soon!</h4>
+			</div>
+		</div>
 	<% else %>
 		<% @projects.current.each do |project| %>
 			<div class="post" style="background-image: url(<%= asset_path(project.main_image.url(:medium)) %>)">
@@ -50,7 +55,12 @@
 <a name="gallery"></a>
 <div class="instagram">
 	<% if @projects.past.count == 0 %>
-		<h4>No Current Projects. Check back soon!</h4>
+		<div class="container" style="background-image: url(<%= asset_path('backgrounds/projects.jpg') %>); min-height: 200px">
+			<div class="row centered">
+				<h2>No Past Projects</h2>
+				<h4>Check back soon!</h4>
+			</div>
+		</div>
 	<% else %>
 		<% @projects.past.each do |project| %>
 			<div class="post" style="background-image: url(<%= asset_path(project.main_image.url(:medium)) %>)">

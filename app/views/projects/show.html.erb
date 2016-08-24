@@ -1,26 +1,27 @@
 <!-- Header hero image -->
-<div class="project-hero" style="background-image: url(<%= asset_path(@project.main_image.url(:large)) %>);" >
-	<div class="container">
-		<div class="row">
-			<div class="project-circle wheel">
-				<h4 class="project-header"><%= @project.name %></h4>
-				<%= image_tag "line_art/wheel.png" %>
-			</div>
-		</div>
-	</div>
+<% header_path = @project.main_image.url(:large).include?("missing") ? asset_path('backgrounds/projects.jpg') : asset_path(@project.main_image.url(:large)) %>
+<div class="project-hero" style="background-image: url(<%= header_path %>);" >
 </div>
 
 <div class="dark-blue">
 	<div class="blue-circle wheel">
-		<h5>Pictures</h5>
+		<h5>Projects</h5>
 		<%= image_tag "line_art/wheel.png" %>
 	</div>
 	<div class="container">
 		<div class="row">
-			<div style="text-align: center; margin-left: auto; margin-right: auto; width: 60%">
-				<h4><%= @project.name %></h4>
-				<p style="font-weight: 700"><%= @project.complete? ? "Completed on #{@project.format_date}" : "In Progress" %></p>
-				<p><%= @project.description %></p>
+			<div class="col-md-12">
+				<ol class="breadcrumb">
+				  <li><%= link_to root_path do %>Home<% end %></li>
+				  <li><%= link_to projects_path do %>Projects<% end %></li>
+				  <li class="active"><%= @project.name %></li>
+				</ol>
+
+				<div style="text-align: center; margin-left: auto; margin-right: auto; width: 60%">
+					<h4><%= @project.name %></h4>
+					<p style="font-weight: 700"><%= @project.complete? ? "Completed on #{@project.format_date}" : "In Progress" %></p>
+					<p><%= @project.description %></p>
+				</div>
 			</div>
 		</div>
 	</div>

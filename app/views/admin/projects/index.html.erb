@@ -42,6 +42,7 @@
 							<td>
 								<%= link_to 'Edit', edit_admin_project_path(project), class: 'btn btn-default' %>
 								<%= link_to 'Complete', complete_admin_project_path(project), method: :put, class: 'btn btn-default' %>
+								<%= link_to 'Delete', admin_project_path(project), method: :delete, class: 'btn btn-default', data: { confirm: 'Are you sure?' } %>
 							</td>
 						</tr>
 					<% end %>

@@ -1,6 +1,7 @@
 module Admin
 	class ProjectsController < AdminController
-		before_filter :find_project, only: [:show, :edit, :update, :complete]
+		before_filter :find_project, only: [:show, :edit, :update, :complete, :destroy]
+		
 		def index
 			@projects = Project.all.order('complete_date DESC')
 		end
@@ -37,6 +38,11 @@ module Admin
 					format.html { render action: "edit", status: 422 }
 				end
 			end
+		end
+
+		def destroy
+			@project.destroy
+			redirect_to admin_projects_path
 		end
 
 		def complete

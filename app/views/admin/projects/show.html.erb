@@ -33,6 +33,7 @@
 							<th>Image</th>
 							<th>Name</th>
 							<th>Description</th>
+							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -41,6 +42,10 @@
 								<td><%= image_tag image.image_attach.url(:thumb) %></td>
 								<td><%= image.name %></td>
 								<td><%= image.description %></td>
+								<td>
+									<%= link_to 'edit', edit_admin_project_image_path(@project, image), class: 'btn btn-default' %>
+									<%= link_to 'delete', admin_project_image_path(@project, image), method: :delete, class: 'btn btn-default', data: { confirm: 'Are you sure?' } %>
+								</td>
 							</tr>
 						<% end %>
 					</tbody>
